@@ -38,7 +38,6 @@
 		.noprint {
 			display: revert;
 		}
-
 		@media print {
 			.print {
 				display: revert;
@@ -52,12 +51,26 @@
 				text-decoration: inherit;
 			}
 		}
+
+		#title {
+
+		}
+
+		#title * {
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		#title h1 {
+			flex-grow: 1;
+			align-self: flex-end;
+		}
 	</style>
 </head>
 <body>
 	<div style="max-width: 680px">
-		<div style="display: flex; gap: 10px; align-items: center;">
-			<h1 style="flex-grow: 1; align-self: flex-end">James Keveren</h1>
+		<div id="title" style="display: flex; gap: 10px; align-items: center;">
+			<h1>James Keveren</h1>
 			<div style="text-align: end">
 				<a href="https://james.keve.ren" target="_blank">james.keve.ren</a><br>
 				<a href="mailto:james@keve.ren" target="_blank">james@keve.ren</a><br>
@@ -65,7 +78,7 @@
 				<span class="print">View online at <a href="https://cv.keve.ren">cv.keve.ren</a></span>
 				<a class="noprint" href="javascript:void()" onclick="print()">Print this CV</a>
 			</div>
-			<svg height="50px" viewBox="0 0 25 25" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<svg width="50px" height="50px" viewBox="0 0 25 25" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
 				<title>https://cv.keve.ren</title>
 				<g>
 					<rect x="0" y="0" width="25" height="25" fill="#ffffff"/>
@@ -79,8 +92,8 @@
 		<h2>Summary</h2>
 		<p>
 			Software Engineer with experience in all aspects of building software including design, implementation, and deployment.
-			Most of my experience has been building APIs and microservices in JS, Go and C# with SQL and No-SQL DBs; but I've done a bit of everything, from IT support to small scale tape backup systems.
-			I like to follow best practices get things right the first time, but I also understand the importance of agile development.
+			Most of my experience has been building REST APIs and microservices in JS, Go and C# using both SQL and No-SQL DBs; but I've done a bit of everything, from IT support to small scale tape backup systems.
+			I like to follow best practices and get things right the first time, but I also understand the importance of agile development.
 		</p>
 
 		<h2>Skills and Technology</h2>
