@@ -1,0 +1,2 @@
+#! /bin/sh
+qrencode -o - https://cv.keve.ren -t svg -m 0 -l M --svg-path --inline
