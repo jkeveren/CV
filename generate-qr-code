@@ -1,2 +1,2 @@
 #! /bin/sh
-qrencode -o - https://cv.keve.ren -t svg -m 0 -l M --svg-path --inline
+qrencode -o - https://cv.keve.ren -m 0 -l M -s 1 | base64 -w 0 | tee /dev/stderr | base64 -d | identify -format "\nDimensions: %wx%h\n" -
