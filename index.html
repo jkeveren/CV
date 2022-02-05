@@ -1,116 +1,191 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>James Keveren CV</title>
-	<style>
-		html {
-			font-family: arial, sans-serif;
-			font-size: 12px;
-		}
-		body {
-			display: flex;
-			justify-content: center;
-		}
-
-		h1 {
-			margin: 0;
-		}
-		h2 {
-			margin-top: 20px;
-			margin-bottom: 5px;
-		}
-		h3 {
-			margin-top: 5px;
-			margin-bottom: 0;
-		}
-
-		p {
-			margin: 0;
-		}
-		small {
-			font-size: 10px;
-		}
-
-		.print {
-			display: none;
-		}
-		.noprint {
-			display: revert;
-		}
-		@media print {
-			.print {
-				display: revert;
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>James Keveren CV</title>
+		<style>
+			html {
+				font-family: arial, sans-serif;
+				font-size: 12px;
 			}
-			.noprint {
+			body {
+				display: flex;
+				justify-content: center;
+			}
+
+			h1 {
+				margin: 0;
+			}
+			h2 {
+				margin-top: 20px;
+				margin-bottom: 5px;
+			}
+			h3 {
+				margin-top: 5px;
+				margin-bottom: 0;
+			}
+
+			p {
+				margin: 0;
+			}
+			small {
+				font-size: 10px;
+			}
+
+			.print {
 				display: none;
 			}
-
-			a {
-				color: inherit;
-				text-decoration: inherit;
+			.noprint {
+				display: revert;
 			}
-		}
+			@media print {
+				.print {
+					display: revert;
+				}
+				.noprint {
+					display: none;
+				}
 
-		#title {
+				a {
+					color: inherit;
+					text-decoration: inherit;
+				}
+			}
 
-		}
+			.row {
+				display: flex;
+				gap: 10px;
+			}
 
-		#title * {
-			white-space: nowrap;
-			flex-shrink: 0;
-		}
+			.start {
+				align-items: flex-start;
+			}
+			.center {
+				align-items: center;
+			}
+			.end {
+				align-items: flex-end;
+			}
 
-		#title h1 {
-			flex-grow: 1;
-			align-self: flex-end;
-		}
-	</style>
-</head>
-<body>
-	<div style="max-width: 680px">
-		<div id="title" style="display: flex; gap: 10px; align-items: center;">
-			<h1>James Keveren</h1>
-			<div style="text-align: end">
-				<a href="https://james.keve.ren" target="_blank">james.keve.ren</a><br>
-				<a href="mailto:james@keve.ren" target="_blank">james@keve.ren</a><br>
-				<a href="tel:+447975905038">+44 7975 905 038</a><br>
-				<span class="print">View online at <a href="https://cv.keve.ren">cv.keve.ren</a></span>
-				<a class="noprint" href="javascript:void()" onclick="print()">Print this CV</a>
+			ul.tech-list {
+				display: inline;
+				padding-left: 0;
+				margin: 0;
+			}
+			ul.tech-list > li {
+				display: inline;
+				background: #ccc;
+				padding: 0 2px;
+				border-radius: 2px;
+			}
+
+			#title * {
+				white-space: nowrap;
+				flex-shrink: 0;
+			}
+
+			#title h1 {
+				flex-grow: 1;
+				align-self: flex-end;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="max-width: 680px">
+			<div id="title" class="row center" style="">
+				<h1>James Keveren</h1>
+				<div style="text-align: end">
+					<a href="https://james.keve.ren" target="_blank">james.keve.ren</a><br>
+					<a href="mailto:james@keve.ren" target="_blank">james@keve.ren</a><br>
+					<a href="tel:+447975905038">+44 7975 905 038</a><br>
+					<span class="print">View online at <a href="https://cv.keve.ren">cv.keve.ren</a></span>
+					<a class="noprint" href="javascript:void()" onclick="print()">Print this CV</a>
+				</div>
+				<svg width="50px" height="50px" viewBox="0 0 25 25" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					<title>https://cv.keve.ren</title>
+					<g>
+						<rect x="0" y="0" width="25" height="25" fill="#ffffff"/>
+						<path style="stroke:#000000" transform="translate(0,0.5)" d="M0,0h1M1,0h1M2,0h1M3,0h1M4,0h1M5,0h1M6,0h1M8,0h1M9,0h1M11,0h1M13,0h1M14,0h1M18,0h1M19,0h1M20,0h1M21,0h1M22,0h1M23,0h1M24,0h1M0,1h1M6,1h1M9,1h1M14,1h1M18,1h1M24,1h1M0,2h1M2,2h1M3,2h1M4,2h1M6,2h1M8,2h1M10,2h1M12,2h1M13,2h1M16,2h1M18,2h1M20,2h1M21,2h1M22,2h1M24,2h1M0,3h1M2,3h1M3,3h1M4,3h1M6,3h1M9,3h1M10,3h1M11,3h1M13,3h1M14,3h1M16,3h1M18,3h1M20,3h1M21,3h1M22,3h1M24,3h1M0,4h1M2,4h1M3,4h1M4,4h1M6,4h1M10,4h1M12,4h1M14,4h1M18,4h1M20,4h1M21,4h1M22,4h1M24,4h1M0,5h1M6,5h1M8,5h1M9,5h1M13,5h1M14,5h1M18,5h1M24,5h1M0,6h1M1,6h1M2,6h1M3,6h1M4,6h1M5,6h1M6,6h1M8,6h1M10,6h1M12,6h1M14,6h1M16,6h1M18,6h1M19,6h1M20,6h1M21,6h1M22,6h1M23,6h1M24,6h1M11,7h1M15,7h1M16,7h1M0,8h1M2,8h1M6,8h1M7,8h1M9,8h1M10,8h1M12,8h1M13,8h1M14,8h1M16,8h1M19,8h1M22,8h1M24,8h1M0,9h1M1,9h1M4,9h1M8,9h1M9,9h1M10,9h1M11,9h1M13,9h1M15,9h1M17,9h1M18,9h1M19,9h1M21,9h1M23,9h1M24,9h1M5,10h1M6,10h1M15,10h1M18,10h1M21,10h1M22,10h1M24,10h1M0,11h1M1,11h1M2,11h1M3,11h1M4,11h1M7,11h1M8,11h1M13,11h1M16,11h1M18,11h1M21,11h1M1,12h1M2,12h1M6,12h1M8,12h1M9,12h1M10,12h1M11,12h1M12,12h1M13,12h1M15,12h1M16,12h1M17,12h1M18,12h1M19,12h1M24,12h1M1,13h1M2,13h1M3,13h1M5,13h1M8,13h1M10,13h1M12,13h1M15,13h1M16,13h1M18,13h1M19,13h1M23,13h1M24,13h1M0,14h1M1,14h1M2,14h1M4,14h1M5,14h1M6,14h1M8,14h1M9,14h1M12,14h1M13,14h1M14,14h1M15,14h1M16,14h1M21,14h1M22,14h1M24,14h1M2,15h1M9,15h1M10,15h1M11,15h1M12,15h1M14,15h1M15,15h1M16,15h1M18,15h1M19,15h1M20,15h1M21,15h1M0,16h1M1,16h1M3,16h1M6,16h1M8,16h1M10,16h1M13,16h1M14,16h1M15,16h1M16,16h1M17,16h1M18,16h1M19,16h1M20,16h1M23,16h1M8,17h1M9,17h1M13,17h1M14,17h1M15,17h1M16,17h1M20,17h1M24,17h1M0,18h1M1,18h1M2,18h1M3,18h1M4,18h1M5,18h1M6,18h1M8,18h1M9,18h1M10,18h1M11,18h1M16,18h1M18,18h1M20,18h1M24,18h1M0,19h1M6,19h1M9,19h1M10,19h1M13,19h1M15,19h1M16,19h1M20,19h1M23,19h1M24,19h1M0,20h1M2,20h1M3,20h1M4,20h1M6,20h1M10,20h1M11,20h1M12,20h1M13,20h1M15,20h1M16,20h1M17,20h1M18,20h1M19,20h1M20,20h1M23,20h1M24,20h1M0,21h1M2,21h1M3,21h1M4,21h1M6,21h1M10,21h1M12,21h1M15,21h1M17,21h1M20,21h1M22,21h1M23,21h1M0,22h1M2,22h1M3,22h1M4,22h1M6,22h1M8,22h1M10,22h1M12,22h1M13,22h1M14,22h1M16,22h1M17,22h1M19,22h1M20,22h1M21,22h1M23,22h1M24,22h1M0,23h1M6,23h1M9,23h1M10,23h1M11,23h1M12,23h1M14,23h1M16,23h1M18,23h1M19,23h1M20,23h1M0,24h1M1,24h1M2,24h1M3,24h1M4,24h1M5,24h1M6,24h1M8,24h1M9,24h1M13,24h1M14,24h1M16,24h1M21,24h1M24,24h1"/>
+					</g>
+				</svg>
 			</div>
-			<svg width="50px" height="50px" viewBox="0 0 25 25" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-				<title>https://cv.keve.ren</title>
-				<g>
-					<rect x="0" y="0" width="25" height="25" fill="#ffffff"/>
-					<path style="stroke:#000000" transform="translate(0,0.5)" d="M0,0h1M1,0h1M2,0h1M3,0h1M4,0h1M5,0h1M6,0h1M8,0h1M9,0h1M11,0h1M13,0h1M14,0h1M18,0h1M19,0h1M20,0h1M21,0h1M22,0h1M23,0h1M24,0h1M0,1h1M6,1h1M9,1h1M14,1h1M18,1h1M24,1h1M0,2h1M2,2h1M3,2h1M4,2h1M6,2h1M8,2h1M10,2h1M12,2h1M13,2h1M16,2h1M18,2h1M20,2h1M21,2h1M22,2h1M24,2h1M0,3h1M2,3h1M3,3h1M4,3h1M6,3h1M9,3h1M10,3h1M11,3h1M13,3h1M14,3h1M16,3h1M18,3h1M20,3h1M21,3h1M22,3h1M24,3h1M0,4h1M2,4h1M3,4h1M4,4h1M6,4h1M10,4h1M12,4h1M14,4h1M18,4h1M20,4h1M21,4h1M22,4h1M24,4h1M0,5h1M6,5h1M8,5h1M9,5h1M13,5h1M14,5h1M18,5h1M24,5h1M0,6h1M1,6h1M2,6h1M3,6h1M4,6h1M5,6h1M6,6h1M8,6h1M10,6h1M12,6h1M14,6h1M16,6h1M18,6h1M19,6h1M20,6h1M21,6h1M22,6h1M23,6h1M24,6h1M11,7h1M15,7h1M16,7h1M0,8h1M2,8h1M6,8h1M7,8h1M9,8h1M10,8h1M12,8h1M13,8h1M14,8h1M16,8h1M19,8h1M22,8h1M24,8h1M0,9h1M1,9h1M4,9h1M8,9h1M9,9h1M10,9h1M11,9h1M13,9h1M15,9h1M17,9h1M18,9h1M19,9h1M21,9h1M23,9h1M24,9h1M5,10h1M6,10h1M15,10h1M18,10h1M21,10h1M22,10h1M24,10h1M0,11h1M1,11h1M2,11h1M3,11h1M4,11h1M7,11h1M8,11h1M13,11h1M16,11h1M18,11h1M21,11h1M1,12h1M2,12h1M6,12h1M8,12h1M9,12h1M10,12h1M11,12h1M12,12h1M13,12h1M15,12h1M16,12h1M17,12h1M18,12h1M19,12h1M24,12h1M1,13h1M2,13h1M3,13h1M5,13h1M8,13h1M10,13h1M12,13h1M15,13h1M16,13h1M18,13h1M19,13h1M23,13h1M24,13h1M0,14h1M1,14h1M2,14h1M4,14h1M5,14h1M6,14h1M8,14h1M9,14h1M12,14h1M13,14h1M14,14h1M15,14h1M16,14h1M21,14h1M22,14h1M24,14h1M2,15h1M9,15h1M10,15h1M11,15h1M12,15h1M14,15h1M15,15h1M16,15h1M18,15h1M19,15h1M20,15h1M21,15h1M0,16h1M1,16h1M3,16h1M6,16h1M8,16h1M10,16h1M13,16h1M14,16h1M15,16h1M16,16h1M17,16h1M18,16h1M19,16h1M20,16h1M23,16h1M8,17h1M9,17h1M13,17h1M14,17h1M15,17h1M16,17h1M20,17h1M24,17h1M0,18h1M1,18h1M2,18h1M3,18h1M4,18h1M5,18h1M6,18h1M8,18h1M9,18h1M10,18h1M11,18h1M16,18h1M18,18h1M20,18h1M24,18h1M0,19h1M6,19h1M9,19h1M10,19h1M13,19h1M15,19h1M16,19h1M20,19h1M23,19h1M24,19h1M0,20h1M2,20h1M3,20h1M4,20h1M6,20h1M10,20h1M11,20h1M12,20h1M13,20h1M15,20h1M16,20h1M17,20h1M18,20h1M19,20h1M20,20h1M23,20h1M24,20h1M0,21h1M2,21h1M3,21h1M4,21h1M6,21h1M10,21h1M12,21h1M15,21h1M17,21h1M20,21h1M22,21h1M23,21h1M0,22h1M2,22h1M3,22h1M4,22h1M6,22h1M8,22h1M10,22h1M12,22h1M13,22h1M14,22h1M16,22h1M17,22h1M19,22h1M20,22h1M21,22h1M23,22h1M24,22h1M0,23h1M6,23h1M9,23h1M10,23h1M11,23h1M12,23h1M14,23h1M16,23h1M18,23h1M19,23h1M20,23h1M0,24h1M1,24h1M2,24h1M3,24h1M4,24h1M5,24h1M6,24h1M8,24h1M9,24h1M13,24h1M14,24h1M16,24h1M21,24h1M24,24h1"/>
-				</g>
-			</svg>
+
+			<hr>
+
+			<h2>Summary</h2>
+			<p>
+				Software Engineer with experience in all aspects of building software including design, implementation, and deployment.
+				Most of my experience has been building REST APIs, microservices and frontends in JS, Go and C# using both SQL and No-SQL DBs.
+				I also have experience with a wide range of other technologies as listed in the section below.
+				I think that it's important to follow best practices in order to promote and retain readability, maintainablilty and reliability.
+			</p>
+
+			<h2>Skills and Technology</h2>
+			<h3>Software Engineering</h3>
+			<p>Golang, JavaScript, Nodejs, NPM, C#, .Net, Entity Framework, MSSQL, C++, Git, GCP, firebase, AWS, MongoDB, Mercurial, TDD, Regexp, Magick++, Mocha, Express, Gulp, Pug, HTML, CSS, Websockets, JSON, REST</p>
+			<h3>Linux</h3>
+			<p>Linux (Arch, Debian, CentOS), Systemd, Fish, Bash, SSH, ACLs, xattrs, Haproxy, Nginx, Plesk, dm-crypt, Xinetd, Rsync, Cage, FFmpeg, ImageMagick, LTO, Raspberry pi</p>
+			<h3>Networking</h3>
+			<p>DNS, TLS/SSL, HTTP, Let's Encrypt, Certbot, Opnsense, Unifi, PoE, Fibre Channel</p>
+			<h3>IT Support</h3>
+			<p>Microsoft 365, MailEnable, Desktop/Server Hardware, Dell iDrac</p>
+			<h3>Non-IT</h3>
+			<p>SolidWorks, Fusion360, OpenScad, Blender, Cura, Chitubox, Kdenlive, Adobe Premier Pro, Gimp, Paint.net</p>
+
+			<h2>Employment</h2>
+			<div class="row end" style="justify-content: space-between">
+				<h3>IFL Management</h3>
+				<div>Nov 2017 - present</div>
+			</div>
+			<p>This being a small company I worked on a diverse set of projects</p>
+			<h2>Personal Projects</h2>
+			<h3>Crop Collage</h3>
+			<ul class="tech-list">
+				<li>C++</li>
+				<li>Magick++</li>
+			</ul>
+			<p>
+				Built with C++ and Magick++. Recursively finds images with an xattr that specifies an ImageMagic geometry.
+				Crops to that geometry and builds a collage from those cropped images.
+				Allows the archival of original images and use of cropped image in collage without the necessity to store a cropped version.
+				Optimized to reduce memory usage.
+			</p>
+			<h3>Personal Website</h3>
+			<p>
+				Built with Go, using TDD.
+				Manipulates HTTP connections to "trickle" the home page.
+				Includes a gallery feature that is optimised for serving images over a connection with limited bandwidth using compression and caching.
+			</p>
+			<h3>Crossout Market Scoring Tool</h3>
+			<p>
+				Written in Go.
+				Tool to analyse the market in the game Crossout in order to find the best items to buy and sell for profit.
+				Takes into account supply and demand, market activity and ROI.
+			</p>
+			<h3>Doogle</h3>
+			<p>
+				Written in Go.
+				Proxy to Google.com which replaces every instance of the word "Google" with the word "Doogle" including logos.
+				Any search is replaced by an image search for "beagle" with all instances of "beagle" replaces by "doogle".
+			</p>
+			<h3>File Drop</h3>
+			<p>
+				Made with Go.
+				Simple website for uploading files.
+				Useful when someone wants to send me a large file without an FTP client.
+			</p>
+			<h3>Home Controller</h3>
+			<small>Node.js</small>
+			<p>
+				Built with Node.js.
+				used to control various lights and appliances around my home using Sonoff smart switches via their HTTP API.
+			</p>
+			<h3>Massdraw</h3>
+			<p>
+				Made with Node.js and Socket.io.
+				Multi-user whiteboard ...
+			</p>
 		</div>
-
-		<hr>
-
-		<h2>Summary</h2>
-		<p>
-			Software Engineer with experience in all aspects of building software including design, implementation, and deployment.
-			Most of my experience has been building REST APIs and microservices in JS, Go and C# using both SQL and No-SQL DBs; but I've done a bit of everything, from IT support to small scale tape backup systems.
-			I like to follow best practices and get things right the first time, but I also understand the importance of agile development.
-		</p>
-
-		<h2>Skills and Technology</h2>
-		<h3>Software Engineering</h3>
-		<p>Golang, JavaScript, Nodejs, NPM, C#, .Net, Entity Framework, MSSQL, C++, Git, GCP, firebase, AWS, MongoDB, Mercurial, TDD, Regexp, Magick++, Mocha, Express, Gulp, Pug, HTML, CSS, Websockets, JSON, REST</p>
-		<h3>Linux</h3>
-		<p>Linux (Arch, Debian, CentOS), Systemd, Fish, Bash, SSH, ACLs, xattrs, Haproxy, Nginx, Plesk, dm-crypt, Xinetd, Rsync, Cage, FFmpeg, ImageMagick, LTO, Raspberry pi</p>
-		<h3>Networking</h3>
-		<p>DNS, TLS/SSL, HTTP, Let's Encrypt, Certbot, Opnsense, Unifi, PoE, Fibre Channel</p>
-		<h3>IT Support</h3>
-		<p>Microsoft 365, MailEnable, Desktop/Server Hardware, Dell iDrac</p>
-		<h3>Non-IT</h3>
-		<p>SolidWorks, Fusion360, OpenScad, Blender, Cura, Chitubox, Kdenlive, Adobe Premier Pro, Gimp, Paint.net</p>
-
-		<h2>Employment</h2>
-		<h3>Mapelseed Ltd</h3>
-		<h3>Jupiter Online</h3>
-	</div>
-
-</body>
+	</body>
+</html>
