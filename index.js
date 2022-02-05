@@ -1,7 +1,7 @@
 function div(parent) {
-	const div = document.createElement("div");
-	parent.appendChild(div);
-	return div;
+	const d = document.createElement("div");
+	parent.appendChild(d);
+	return d;
 }
 
 function anchor(parent, text, href) {
@@ -12,10 +12,32 @@ function anchor(parent, text, href) {
 	return a;
 }
 
-function SVGElement(parent, tagName) {
-	const element = document.createElementNS("http://www.w3.org/2000/svg", tagName);
-	parent.appendChild(element);
-	return element;
+function heading(parent, text) {
+	const h = div(parent);
+	Object.assign(h.style, {
+		fontSize: "2em",
+		fontWeight: "bold",
+		marginTop: "15px",
+	})
+	h.textContent = text;
+	return h;
+}
+
+function heading2(parent, text) {
+	const h = heading(parent, text);
+	Object.assign(h.style, {
+		fontSize: "1.5em",
+		marginTop: "5px",
+	});
+	return h;
+}
+
+function text(parent, text) {
+	const h = div(parent);
+	Object.assign(h.style, {
+	})
+	h.textContent = text;
+	return h;
 }
 
 document.title = "James Keveren CV";
@@ -62,6 +84,7 @@ Object.assign(document.body.style, {
 		title.textContent = "James Keveren";
 		Object.assign(title.style, {
 			fontSize: "2.5em",
+			fontWeight: "bold",
 			whiteSpace: "nowrap",
 			flexGrow: 1,
 			alignSelf: "flex-end",
@@ -105,9 +128,110 @@ Object.assign(document.body.style, {
 		QRCode.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZAQMAAAD+JxcgAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAB8SURBVAiZY2DUPFDPULv3fj2Da3AgkOgEEVcvAsUsgWKMoQ71DP/f1f9niJmYW89gztVVz/Dz3816Brbq6P8Mc5n46xm6w/zqGQQNKusZ7rc4/2fQjWD7z/Dfohyolz8caMqsMqB5h9iAxLUt/xlcA5WAYq3u/xkYLavrAaQMLsKjKAuKAAAAAElFTkSuQmCC";
 		Object.assign(QRCode.style, {
 			imageRendering: "pixelated",
+			// width and height should be double the "dimensions" ouptut from the "generate-qr-code" script.
 			width: "50px",
 			height: "50px",
 		})
 		header.appendChild(QRCode);
+	}
+
+	// summary
+	heading(container, "Summary");
+	text(container, `
+Software Engineer with experience in all aspects of building software including design, implementation, and deployment.
+Most of my experience has been building REST APIs, microservices and frontends in JS, Go and C# using both SQL and No-SQL DBs.
+I also have experience with a wide range of other technologies as listed in the section below.
+I think that it's important to follow best practices in order to promote and retain readability, maintainablilty and reliability.
+	`);
+
+	// skills and technology
+	// items are stored in an array to for easier reordering
+	heading(container, "Skills and Technology");
+	const groups = [
+		["Software Engineering", [
+			"Golang",
+			"JavaScript",
+			"Nodejs",
+			"NPM",
+			"C#",
+			".Net",
+			"Entity",
+			"Framework",
+			"MSSQL",
+			"C++",
+			"Git",
+			"GCP",
+			"firebase",
+			"AWS",
+			"MongoDB",
+			"Mercurial",
+			"TDD",
+			"Regexp",
+			"Magick++",
+			"Mocha",
+			"Express",
+			"Gulp",
+			"Pug",
+			"HTML",
+			"CSS",
+			"Websockets",
+			"JSON",
+			"REST",
+		]],
+		["Linux", [
+			"Arch",
+			"Debian",
+			"CentOS",
+			"Systemd",
+			"Fish",
+			"Bash",
+			"SSH",
+			"ACLs",
+			"xattrs",
+			"Haproxy",
+			"Nginx",
+			"Plesk",
+			"dm-crypt",
+			"Xinetd",
+			"Rsync",
+			"Cage",
+			"FFmpeg",
+			"ImageMagick",
+			"LTO",
+			"Raspberry pi",
+		]],
+		["Networking", [
+			"DNS",
+			"TLS/SSL",
+			"HTTP",
+			"Let's Encrypt",
+			"Certbot",
+			"Opnsense",
+			"Unifi",
+			"PoE",
+			"Fibre Channel",
+		]],
+		["IT Support", [
+			"Microsoft 365",
+			"MailEnable",
+			"Desktop/Server Hardware",
+			"Dell iDrac",
+		]],
+		["Non-IT", [
+			"SolidWorks",
+			"Fusion360",
+			"OpenScad",
+			"Blender",
+			"Cura",
+			"Chitubox",
+			"Kdenlive",
+			"Adobe Premier Pro",
+			"Gimp",
+			"Paint.net",
+		]]
+	]
+	for (let group of groups) {
+		heading2(container, group[0]);
+		text(container, group[1].join(", "))
 	}
 }
