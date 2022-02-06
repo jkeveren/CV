@@ -18,6 +18,7 @@ function heading(parent, text) {
 		fontSize: "1.7em",
 		fontWeight: "bold",
 		marginTop: "15px",
+		borderTop: "#777 1px", // TODO: FIx
 	})
 	h.textContent = text;
 	return h;
@@ -34,10 +35,22 @@ function heading2(parent, text) {
 
 function text(parent, text) {
 	const h = div(parent);
-	Object.assign(h.style, {
-	})
 	h.textContent = text;
 	return h;
+}
+
+function list(parent) {
+	const ul = document.createElement("ul");
+	ul.style.margin = 0;
+	parent.appendChild(ul);
+	return ul;
+}
+
+function listItem(parent, text) {
+	const li = document.createElement("li");
+	li.textContent = text;
+	parent.appendChild(li);
+	return li;
 }
 
 document.title = "James Keveren CV";
@@ -112,13 +125,18 @@ Object.assign(document.body.style, {
 			viewOnline.textContent = "View online at cv.keve.ren";
 
 			// print link
-			const printLink = anchor(linksContainer, "Print this CV", "Print: this cv")
-			printLink.classList.add("noprint"); // only show when not printitng
-			printLink.addEventListener("click", e => {
-				e.preventDefault();
-				print();
-			});
-			printLink.target = "_self";
+			// const printLink = anchor(linksContainer, "Print this CV", "Print: this cv")
+			// printLink.classList.add("noprint"); // only show when not printitng
+			// printLink.addEventListener("click", e => {
+			// 	e.preventDefault();
+			// 	print();
+			// });
+			// printLink.target = "_self";
+
+			// download link
+			const downloadLink = anchor(linksContainer, "Download PDF", document.title + ".pdf")
+			downloadLink.classList.add("noprint"); // only show when not printitng
+			downloadLink.download = "";
 		}
 
 		// QRCode
@@ -136,7 +154,7 @@ Object.assign(document.body.style, {
 	// summary
 	heading(container, "Summary");
 	text(container,
-		`Software Engineer with experience in all aspects of building software including design, implementation, and deployment.
+		`Software Engineer with experience in all aspects of building software including architecture, implementation, and deployment.
 		Most of my experience has been building REST APIs, microservices and frontends in JS, Go and C# using both SQL and No-SQL DBs.
 		I also have experience with a wide range of other technologies as listed in the section below.
 		I think that it's important to follow best practices in order to promote and retain readability, maintainablilty and reliability.`
@@ -158,9 +176,10 @@ Object.assign(document.body.style, {
 			"MSSQL",
 			"C++",
 			"Git",
-			"GCP",
+			"Google Cloud",
 			"firebase",
 			"AWS",
+			"Plesk",
 			"MongoDB",
 			"Mercurial",
 			"TDD",
@@ -172,7 +191,7 @@ Object.assign(document.body.style, {
 			"Pug",
 			"HTML",
 			"CSS",
-			"Websockets",
+			"WebSockets",
 			"JSON",
 			"REST",
 		]],
@@ -209,11 +228,13 @@ Object.assign(document.body.style, {
 			"PoE",
 			"Fibre Channel",
 		]],
-		["IT Support", [
+		["IT Support and Other IT", [
 			"Microsoft 365",
 			"MailEnable",
 			"Desktop/Server Hardware",
 			"Dell iDrac",
+			"Google Ads",
+			"Plesk"
 		]],
 		["Non-IT", [
 			"SolidWorks",
@@ -235,14 +256,48 @@ Object.assign(document.body.style, {
 
 	// Employment
 	heading(container, "Employment");
-	const IFLMHeadRow = div(container);
-	Object.assign(IFLMHeadRow.style, {
-		display: "flex",
-		justifyContent: "space-between",
-	});
-	heading2(IFLMHeadRow, "IFL Management");
-	text(IFLMHeadRow, "Nov 2017 - Present");
-	text(container, "IFLM text...");
+	const companies = [
+		[
+			"IFL Management",
+			"Nov 2017 - Present",
+			"Small company that provides umbrella company solutions.",
+			[
+				"Rewrote the financial statement imorter to significatly optimised the processing and deduplication using in memory indexing.",
+				"Worked in a team to build an online quote and sales lead system.",
+				"IT support for Microsoft 365, Outlook, Windows etc.",
+				"Assisted in management of Google Ads."
+			]
+		],
+		[
+			"Pro-Quest",
+			"?",
+			"Small automated recruitment company?",
+			[
+				`Worked in a team to design, build and deploy a system comprising APIs, microservices and web apps to acquire job data from various sources including scraping.
+				The jobs were then normalized, filtered, candidate matched and matches emailed to prospective employers - up to 20,000 per day processed.
+				This included a data entry system for multiple staff to populate fragmented jobs.`,
+				"Built a job listing web app to attract candidates to match with the jobs of the system above. This was an SPA with background loading for a fast UX.",
+				"Built a chaching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firebase Firestore.",
+			]
+		]
+	];
+	for (let c of companies) {
+		const [name, date, description, items] = c;
+		
+		const row = div(container);
+		Object.assign(row.style, {
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "flex-end",
+		});
+		heading2(row, name);
+		text(row, date);
+		text(container, description);
+		const l = list(container);
+		for (let item of items) {
+			listItem(l, item);
+		}
+	}
 
 	// personal projects
 	heading(container, "Personal Projects");
@@ -260,7 +315,8 @@ Object.assign(document.body.style, {
 		[
 			"Personal Website",
 			"github.com/jkeveren/personal-website",
-			"Mar 2015 - present",
+			// "Mar 2015 - present",
+			"continuous",
 			["Go", "REST", "TDD"],
 			`Manipulates HTTP connections to "trickle" the home page.
 			Includes a gallery feature that is optimised for serving images over a connection with limited bandwidth using compression and caching.`,
@@ -285,16 +341,24 @@ Object.assign(document.body.style, {
 			"File Drop",
 			"github.com/jkeveren/file-drop",
 			"Dec 2021",
-			["Go", "JavaScript", "HTML"],
+			["Go", "JavaScript", "HTML", "CSS"],
 			`Simple website for uploading files.
 			Useful when someone wants to send me a large file without an FTP client.`,
+		],
+		[
+			"Whitelisted File Server",
+			"github.com/jkeveren/whitelisted-file-server",
+			"Nov 2017 - Jun 2020",
+			["Node.js"],
+			`Simple fileserver which only allows access if the clients IP is whitelisted.
+			Useful when sending a large files to friends with relative security and simple authentication.`,
 		],
 		[
 			"Home Controller",
 			"github.com/jkeveren/home",
 			"Sept 2019 - Jul 2020",
 			["Node.js"],
-			`used to control various lights and appliances around my home using Sonoff smart switches via their HTTP API.`,
+			`Used to control various lights and appliances around my home using Sonoff smart switches via their HTTP API.`,
 		],
 		[
 			"MassDraw",
@@ -303,7 +367,39 @@ Object.assign(document.body.style, {
 			["Node.js", "Socket.io"],
 			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
 		],
-	]
+		[
+			"CV",
+			"github.com/jkeveren/cv",
+			"continuous",
+			["JavaScript", "HTML", "CSS"],
+			// `I wrote this CV in JavaScript to avoid writing repetetive HTML structures.`,
+			// `This cv is a JavaScript program that builds a HTML page which I print to PDF.`,
+			`This CV is a component-based JavaScript file that builds a HTML page which I print to PDF.
+			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
+		],
+		[
+			"Find by Extended Attribute",
+			"github.com/jkeveren/find-by-extended-attribute",
+			"Jan 2022",
+			["Go", "Linux", "xattrs", "TDD"],
+			`Simple Linux tool to find files based on extended attribute criteria.
+			Similar to \"getfattr -R\" but with much more readable output`,
+		],
+		[
+			"Forza Map",
+			"github.com/jkeveren/forza-map",
+			"Jun, Sept 2020",
+			["Go", "WebSockets", "UDP"],
+			`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
+		],
+		[
+			"Workbench Parts Calculator",
+			"github.com/jkeveren/workbench-parts-helper",
+			"Sept 2019",
+			["JavaScript"],
+			`When designing a steel workbench I used this script to calculate quantities of materials and components to purchase from multiple suppliers.`,
+		]
+	];
 	for (let p of personalProjects) {
 		const [name, link, date, skills, description] = p;
 		
