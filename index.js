@@ -259,30 +259,28 @@ Object.assign(document.body.style, {
 	const companies = [
 		[
 			"IFL Management",
-			"Nov 2017 - Present",
-			"Small company that provides umbrella company solutions.",
+			"Mar 2017 - Present",
 			[
-				"Rewrote the financial statement imorter to significatly optimised the processing and deduplication using in memory indexing.",
+				"Rewrote the financial statement importer to significatly optimised the processing and deduplication using in memory indexing.",
 				"Worked in a team to build an online quote and sales lead system.",
-				"IT support for Microsoft 365, Outlook, Windows etc.",
-				"Assisted in management of Google Ads."
+				// "IT support for Microsoft 365, Outlook, Windows etc.",
+				// "Assisted in management of Google Ads."
 			]
 		],
 		[
-			"Pro-Quest",
-			"?",
-			"Small automated recruitment company?",
+			"Pro-Quest Resourcing",
+			"Dec 2018 - Jun 2020",
 			[
-				`Worked in a team to design, build and deploy a system comprising APIs, microservices and web apps to acquire job data from various sources including scraping.
-				The jobs were then normalized, filtered, candidate matched and matches emailed to prospective employers - up to 20,000 per day processed.
-				This included a data entry system for multiple staff to populate fragmented jobs.`,
-				"Built a job listing web app to attract candidates to match with the jobs of the system above. This was an SPA with background loading for a fast UX.",
-				"Built a chaching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firebase Firestore.",
+				`Worked in a team to design, build and deploy a system comprising APIs, microservices and web apps to acquire vacancy data from various sources including scraping.
+				The vacancies were then normalized, filtered, candidate matched and matches emailed to prospective employers - up to 20,000 per day processed.
+				This included a data entry system for staff to populate incomplete vacancy data.`,
+				"Built a job listing web app to attract candidates to match with the vacancies of the system above. This was an SPA with background loading for a fast UX.",
+				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firebase Firestore.",
 			]
 		]
 	];
 	for (let c of companies) {
-		const [name, date, description, items] = c;
+		const [name, date, items] = c;
 		
 		const row = div(container);
 		Object.assign(row.style, {
@@ -292,7 +290,6 @@ Object.assign(document.body.style, {
 		});
 		heading2(row, name);
 		text(row, date);
-		text(container, description);
 		const l = list(container);
 		for (let item of items) {
 			listItem(l, item);
@@ -325,7 +322,7 @@ Object.assign(document.body.style, {
 			"Crossout Market Scoring Tool",
 			"github.com/jkeveren/crossout-market-scoring-tool",
 			"Aug 2020",
-			["Node.js"],
+			["JavaScript", "Node.js"],
 			`Tool that analyses the market in the game Crossout in order to find the best items to buy and sell for profit.
 			Takes into account supply and demand, market activity and ROI.`,
 		],
@@ -349,7 +346,7 @@ Object.assign(document.body.style, {
 			"Whitelisted File Server",
 			"github.com/jkeveren/whitelisted-file-server",
 			"Nov 2017 - Jun 2020",
-			["Node.js"],
+			["JavaScript", "Node.js"],
 			`Simple fileserver which only allows access if the clients IP is whitelisted.
 			Useful when sending a large files to friends with relative security and simple authentication.`,
 		],
@@ -364,7 +361,7 @@ Object.assign(document.body.style, {
 			"MassDraw",
 			"github.com/jkeveren/massdraw",
 			"Aug - Oct 2017",
-			["Node.js", "Socket.io"],
+			["JavaScript", "Node.js", "Socket.io"],
 			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
 		],
 		[
@@ -372,9 +369,7 @@ Object.assign(document.body.style, {
 			"github.com/jkeveren/cv",
 			"continuous",
 			["JavaScript", "HTML", "CSS"],
-			// `I wrote this CV in JavaScript to avoid writing repetetive HTML structures.`,
-			// `This cv is a JavaScript program that builds a HTML page which I print to PDF.`,
-			`This CV is a component-based JavaScript file that builds a HTML page which I print to PDF.
+			`This CV is a component-based JavaScript app that builds a HTML page which I print to PDF.
 			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
 		],
 		[
@@ -398,6 +393,14 @@ Object.assign(document.body.style, {
 			"Sept 2019",
 			["JavaScript"],
 			`When designing a steel workbench I used this script to calculate quantities of materials and components to purchase from multiple suppliers.`,
+		],
+		[
+			"Require Object",
+			"npmjs.com/package/require-object",
+			"Dec 2017",
+			["Node.js", "NPM", "JavaScript"],
+			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
+			Imports modules and reads file using getters for memory efficiency.`
 		]
 	];
 	for (let p of personalProjects) {
@@ -427,7 +430,7 @@ Object.assign(document.body.style, {
 		}
 
 		anchor(row, link, "https://" + link);
-		text(row, date);
+		// text(row, date);
 		text(container, description);
 	}
 }
