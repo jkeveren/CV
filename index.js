@@ -1,6 +1,8 @@
 function div(parent) {
 	const d = document.createElement("div");
-	parent.appendChild(d);
+	if (parent != null) {
+		parent.appendChild(d);
+	}
 	return d;
 }
 
@@ -120,18 +122,8 @@ Object.assign(document.body.style, {
 			}
 
 			// view online text
-			const viewOnline = div(linksContainer);
+			const viewOnline = anchor(linksContainer, "View online at cv.keve.ren", "https://cv.keve.ren");
 			viewOnline.classList.add("print"); // only show when printing
-			viewOnline.textContent = "View online at cv.keve.ren";
-
-			// print link
-			// const printLink = anchor(linksContainer, "Print this CV", "Print: this cv")
-			// printLink.classList.add("noprint"); // only show when not printitng
-			// printLink.addEventListener("click", e => {
-			// 	e.preventDefault();
-			// 	print();
-			// });
-			// printLink.target = "_self";
 
 			// download link
 			const downloadLink = anchor(linksContainer, "Download PDF", document.title + ".pdf")
@@ -140,15 +132,18 @@ Object.assign(document.body.style, {
 		}
 
 		// QRCode
+		const QRCodeAnchor = anchor(header, "", "https://cv.keve.ren");
+		Object.assign(QRCodeAnchor.style, {
+			marginBottom: "-3px", // negate the mystery 3px padding.
+		});
 		const QRCode = document.createElement("img");
-		QRCode.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZAQMAAAD+JxcgAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAB8SURBVAiZY2DUPFDPULv3fj2Da3AgkOgEEVcvAsUsgWKMoQ71DP/f1f9niJmYW89gztVVz/Dz3816Brbq6P8Mc5n46xm6w/zqGQQNKusZ7rc4/2fQjWD7z/Dfohyolz8caMqsMqB5h9iAxLUt/xlcA5WAYq3u/xkYLavrAaQMLsKjKAuKAAAAAElFTkSuQmCC";
-		Object.assign(QRCode.style, {
-			imageRendering: "pixelated",
-			// width and height should be double the "dimensions" ouptut from the "generate-qr-code" script.
-			width: "50px",
-			height: "50px",
-		})
-		header.appendChild(QRCode);
+		QRCode.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAACPSURBVBiVVc0xCsQwDETRAbUGX0Wg1jBXN6gN+CoBtQbtQojtVK/6fECK3yBeGSMit2pWTU67fw2LQ0b1p3+EmCm2mXMyc2m3SwsuK3H1a5ueM3yLxmEjlx4o+H9e+7CmcytSQd9GdtWayxLW0baZtZNcQpB2yPCLbat2F3yMNjQPTUrhktFNmUtIdQ6+/gBAlJdLmc6UkQAAAABJRU5ErkJggg==";
+		// Object.assign(QRCode.style, {
+		// 	imageRendering: "pixelated",
+		// 	width: "50px",
+		// 	height: "50px",
+		// })
+		QRCodeAnchor.appendChild(QRCode);
 	}
 
 	// summary
@@ -300,6 +295,13 @@ Object.assign(document.body.style, {
 	heading(container, "Personal Projects");
 	const personalProjects = [
 		[
+			"Forza Map",
+			"github.com/jkeveren/forza-map",
+			"Jun, Sept 2020",
+			["Go", "WebSockets", "UDP"],
+			`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
+		],
+		[
 			"Crop Collage",
 			"github.com/jkeveren/crop-collage",
 			"Nov 2021",
@@ -316,15 +318,38 @@ Object.assign(document.body.style, {
 			"continuous",
 			["Go", "REST", "TDD"],
 			`Manipulates HTTP connections to "trickle" the home page.
-			Includes a gallery feature that is optimised for serving images over a connection with limited bandwidth using compression and caching.`,
+			Includes a gallery feature that is optimised for serving images over a slow connection by using compression and caching.`,
 		],
 		[
-			"Crossout Market Scoring Tool",
-			"github.com/jkeveren/crossout-market-scoring-tool",
-			"Aug 2020",
-			["JavaScript", "Node.js"],
-			`Tool that analyses the market in the game Crossout in order to find the best items to buy and sell for profit.
-			Takes into account supply and demand, market activity and ROI.`,
+			"MassDraw",
+			"github.com/jkeveren/massdraw",
+			"Aug - Oct 2017",
+			["JavaScript", "Node.js", "Socket.io"],
+			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
+		],
+		[
+			"Find by Extended Attribute",
+			"github.com/jkeveren/find-by-extended-attribute",
+			"Jan 2022",
+			["Go", "Linux", "xattrs", "TDD"],
+			`Simple Linux tool to find files based on extended attribute criteria.
+			Similar to \"getfattr -R\" but with much more sensible output.`,
+		],
+		[
+			"CV",
+			"github.com/jkeveren/cv",
+			"continuous",
+			["JavaScript", "HTML", "CSS"],
+			`This CV is a HTML page that is built using JavaScript which I print to PDF.
+			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
+		],
+		[
+			"Require Object",
+			"npmjs.com/package/require-object",
+			"Apr 2018",
+			["Node.js", "NPM", "JavaScript"],
+			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
+			Imports modules and reads file using getters for memory efficiency.`
 		],
 		[
 			"Doogle",
@@ -343,6 +368,14 @@ Object.assign(document.body.style, {
 			Useful when someone wants to send me a large file without an FTP client.`,
 		],
 		[
+			"Crossout Market Scoring Tool",
+			"github.com/jkeveren/crossout-market-scoring-tool",
+			"Aug 2020",
+			["JavaScript", "Node.js"],
+			`Tool that analyses the market in the game Crossout in order to find the best items to buy and sell for profit.
+			Takes into account supply and demand, market activity and ROI.`,
+		],
+		[
 			"Whitelisted File Server",
 			"github.com/jkeveren/whitelisted-file-server",
 			"Nov 2017 - Jun 2020",
@@ -358,55 +391,25 @@ Object.assign(document.body.style, {
 			`Used to control various lights and appliances around my home using Sonoff smart switches via their HTTP API.`,
 		],
 		[
-			"MassDraw",
-			"github.com/jkeveren/massdraw",
-			"Aug - Oct 2017",
-			["JavaScript", "Node.js", "Socket.io"],
-			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
-		],
-		[
-			"CV",
-			"github.com/jkeveren/cv",
-			"continuous",
-			["JavaScript", "HTML", "CSS"],
-			`This CV is a component-based JavaScript app that builds a HTML page which I print to PDF.
-			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
-		],
-		[
-			"Find by Extended Attribute",
-			"github.com/jkeveren/find-by-extended-attribute",
-			"Jan 2022",
-			["Go", "Linux", "xattrs", "TDD"],
-			`Simple Linux tool to find files based on extended attribute criteria.
-			Similar to \"getfattr -R\" but with much more readable output`,
-		],
-		[
-			"Forza Map",
-			"github.com/jkeveren/forza-map",
-			"Jun, Sept 2020",
-			["Go", "WebSockets", "UDP"],
-			`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
-		],
-		[
 			"Workbench Parts Calculator",
 			"github.com/jkeveren/workbench-parts-helper",
 			"Sept 2019",
 			["JavaScript"],
 			`When designing a steel workbench I used this script to calculate quantities of materials and components to purchase from multiple suppliers.`,
 		],
-		[
-			"Require Object",
-			"npmjs.com/package/require-object",
-			"Dec 2017",
-			["Node.js", "NPM", "JavaScript"],
-			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
-			Imports modules and reads file using getters for memory efficiency.`
-		]
 	];
-	for (let p of personalProjects) {
-		const [name, link, date, skills, description] = p;
+	const printCount = 8;
+	const noPrint = div(null);
+	noPrint.classList.add("noprint");
+	for (let i = 0; i < personalProjects.length; i++) {
+		const [name, link, date, skills, description] = personalProjects[i];
+
+		let parent = container;
+		if (i >= printCount) {
+			parent = noPrint;
+		}
 		
-		const row = div(container);
+		const row = div(parent);
 		Object.assign(row.style, {
 			display: "flex",
 			gap: "10px",
@@ -431,6 +434,7 @@ Object.assign(document.body.style, {
 
 		anchor(row, link, "https://" + link);
 		// text(row, date);
-		text(container, description);
+		text(parent, description);
 	}
+	container.appendChild(noPrint);
 }
