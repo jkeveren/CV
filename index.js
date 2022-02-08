@@ -368,7 +368,8 @@ Object.assign(document.body.style, {
 			"Apr 2018",
 			["Node.js", "NPM", "JavaScript"],
 			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
-			Imports modules and reads file using getters for memory efficiency.`
+			Imports modules and reads file using getters for memory efficiency.
+			Removes the need for fragile relative paths.`
 		],
 		[
 			"File Drop",
