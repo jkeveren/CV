@@ -344,20 +344,20 @@ Object.assign(document.body.style, {
 			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
 		],
 		[
-			"Require Object",
-			"npmjs.com/package/require-object",
-			"Apr 2018",
-			["Node.js", "NPM", "JavaScript"],
-			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
-			Imports modules and reads file using getters for memory efficiency.`
-		],
-		[
 			"Doogle",
 			"github.com/jkeveren/doogle",
 			"Jun 2020 and Jan 2021",
 			["Go", "Regexp", "Node.js", "Firebase"],
 			`Proxy to Google.com which replaces every instance of the word "Google" with the word "Doogle" including logos.
 			Any search is replaced by an image search for "beagle" with all instances of "beagle" replaces by "doogle".`,
+		],
+		[
+			"Require Object",
+			"npmjs.com/package/require-object",
+			"Apr 2018",
+			["Node.js", "NPM", "JavaScript"],
+			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
+			Imports modules and reads file using getters for memory efficiency.`
 		],
 		[
 			"File Drop",
@@ -408,7 +408,7 @@ Object.assign(document.body.style, {
 		if (i >= printCount) {
 			parent = noPrint;
 		}
-		
+
 		const row = div(parent);
 		Object.assign(row.style, {
 			display: "flex",
