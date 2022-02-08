@@ -55,6 +55,11 @@ function listItem(parent, text) {
 	return li;
 }
 
+function grower(parent) {
+	const d = div(parent);
+	d.style.flexGrow = 1;
+}
+
 document.title = "James Keveren CV";
 
 console.info("https://github.com/jkeveren/cv");
@@ -99,9 +104,10 @@ Object.assign(document.body.style, {
 			fontSize: "2.5em",
 			fontWeight: "bold",
 			whiteSpace: "nowrap",
-			flexGrow: 1,
 			alignSelf: "flex-end",
 		})
+
+		grower(header)
 
 		{ // links
 			const linksContainer = div(header);
@@ -254,6 +260,7 @@ Object.assign(document.body.style, {
 	const companies = [
 		[
 			"IFL Management",
+			"Software Engineer",
 			"Mar 2017 - Present",
 			[
 				"Rewrote the financial statement importer to significatly optimised the processing and deduplication using in memory indexing.",
@@ -264,6 +271,7 @@ Object.assign(document.body.style, {
 		],
 		[
 			"Pro-Quest Resourcing",
+			"Software Engineer",
 			"Dec 2018 - Jun 2020",
 			[
 				`Worked in a team to design, build and deploy a system comprising APIs, microservices and web apps to acquire vacancy data from various sources including scraping.
@@ -275,15 +283,18 @@ Object.assign(document.body.style, {
 		]
 	];
 	for (let c of companies) {
-		const [name, date, items] = c;
+		const [name, title, date, items] = c;
 		
 		const row = div(container);
 		Object.assign(row.style, {
 			display: "flex",
 			justifyContent: "space-between",
 			alignItems: "flex-end",
+			gap: "5px",
 		});
 		heading2(row, name);
+		text(row, "- " + title);
+		grower(row);
 		text(row, date);
 		const l = list(container);
 		for (let item of items) {
@@ -416,7 +427,9 @@ Object.assign(document.body.style, {
 			alignItems: "flex-end",
 		});
 
-		heading2(row, name).style.flexGrow = 1;
+		heading2(row, name);
+
+		grower(row);
 
 		const skillsContainer = div(row);
 		Object.assign(skillsContainer.style, {
