@@ -113,16 +113,16 @@ Object.assign(document.body.style, {
 
 			// simple links
 			const links = [
-				["james.keve.ren", "https://james.keve.ren"],
 				["james@keve.ren", "mailto:james@keve.ren"],
-				["+44 7975 905 038", "tel:+447975905038"]
+				["+44 7975 905 038", "tel:+447975905038"],
+				["https://james.keve.ren", "https://james.keve.ren"],
 			];
 			for (let l of links) {
 				anchor(linksContainer, ...l).style.whiteSpace = "nowrap"
 			}
 
 			// view online text
-			const viewOnline = anchor(linksContainer, "View online at cv.keve.ren", "https://cv.keve.ren");
+			const viewOnline = anchor(linksContainer, "View online at https://cv.keve.ren", "https://cv.keve.ren");
 			viewOnline.classList.add("print"); // only show when printing
 
 			// download link
