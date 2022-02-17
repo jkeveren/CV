@@ -156,9 +156,9 @@ Object.assign(document.body.style, {
 	heading(container, "Summary");
 	text(container,
 		`Software Engineer with experience in all aspects of building software including architecture, implementation, and deployment.
-		Most of my experience has been building REST APIs, microservices and frontends in JS, Go and C# using both SQL and No-SQL DBs.
+		Most of my experience has been building REST APIs, microservices and frontends in JS, .Net and Go using both SQL and No-SQL DBs.
 		I also have experience with a wide range of other technologies as listed in the section below.
-		I think that it's important to follow best practices in order to promote and retain readability, maintainablilty and reliability.`
+		I think that it's important to follow best practices in order to promote and retain readability, maintainability and reliability.`
 	);
 
 	// skills and technology
@@ -266,13 +266,13 @@ Object.assign(document.body.style, {
 			[
 				`Worked in a two person team responsible for automating recruitment lead generation.
 				We built a complex data pipeline to regularly import vacancies from various sources.
-				Built with Node.js .Net, SendGrid and microservices hosted on Google Cloud.
+				Built with Node.js, .Net, SendGrid and microservices hosted on Google Cloud.
 				This provided Pro-Quest with all of it's vacancy leads.
 				Sources included third party vacany providers and scraping.
 				Vacancies were normalized, filtered and deduplicated (around 20,000 - 30,000 per day).
-				Relavent email addresses were found using a number of methods including bing searching, scraping, third party email providers and a data entry web app.
+				Relevant email addresses were found using a number of methods including bing searching, scraping, third party email providers and a data entry web app.
 				Emails were then sent out automatically to prospective employers.
-				We accrued a database of hundreds of thousands of vacancies, companies and contacts in order to manage email unsubscriptions and to access previously found email addresses`,
+				We accrued a database of hundreds of thousands of vacancies, companies and contacts in order to manage email unsubscriptions and to access previously found email addresses.`,
 				`Built a job listing web app, using vanilla JavaScript, to attract candidates to match with the vacancies of the system above.
 				This was an SPA with background loading for a fast UX.`,
 				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firestore.",
@@ -284,7 +284,7 @@ Object.assign(document.body.style, {
 			"Software Engineer",
 			"Mar 2017 - Present",
 			[
-				"Rewrote a financial statement importer to significatly optimise processing and deduplication using in memory indexing in JavaScript.",
+				"Rewrote a QuickBooks data importer to significantly optimise processing and deduplication of financial data using in memory indexing in JavaScript.",
 				"Worked in a small team to build an online quote and sales lead system using .Net and SendGrid.",
 				"Managed servers and hosting of various web apps including DNS.",
 				"Administrated various in house and third party emailing systems including Mailenable and Microsoft 365.",
@@ -368,7 +368,7 @@ Object.assign(document.body.style, {
 			"npmjs.com/package/require-object",
 			"Apr 2018",
 			["Node.js", "NPM", "JavaScript"],
-			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
+			`NPM package that allows files to be accessed via an object that replicates the directory structure of the project.
 			Imports modules and reads file using getters for memory efficiency.
 			Removes the need for fragile relative paths.`
 		],
@@ -403,7 +403,7 @@ Object.assign(document.body.style, {
 			"github.com/jkeveren/whitelisted-file-server",
 			"Nov 2017 - Jun 2020",
 			["JavaScript", "Node.js"],
-			`Simple fileserver which only allows access if the clients IP is whitelisted.
+			`Simple file server which only allows access if the clients IP is whitelisted.
 			Useful when sending a large files to friends with relative security and simple authentication.`,
 		],
 		[
