@@ -259,32 +259,42 @@ Object.assign(document.body.style, {
 	heading(container, "Employment");
 	const companies = [
 		[
+			"Pro-Quest Resourcing",
+			"Recruitment company",
+			"Software Engineer",
+			"Jun 2018 - Jun 2021",
+			[
+				`Worked in a two person team responsible for automating recruitment lead generation.
+				We built a complex data pipeline to regularly import vacancies from various sources.
+				Built with Node.js .Net, SendGrid and microservices hosted on Google Cloud.
+				This provided Pro-Quest with all of it's vacancy leads.
+				Sources included third party vacany providers and scraping.
+				Vacancies were normalized, filtered and deduplicated (around 20,000 - 30,000 per day).
+				Relavent email addresses were found using a number of methods including bing searching, scraping, third party email providers and a data entry web app.
+				Emails were then sent out automatically to prospective employers.
+				We accrued a database of hundreds of thousands of vacancies, companies and contacts in order to manage email unsubscriptions and to access previously found email addresses`,
+				`Built a job listing web app, using vanilla JavaScript, to attract candidates to match with the vacancies of the system above.
+				This was an SPA with background loading for a fast UX.`,
+				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firestore.",
+			],
+		],
+		[
 			"IFL Management",
+			"Umbrella company provider",
 			"Software Engineer",
 			"Mar 2017 - Present",
 			[
-				"Rewrote the financial statement importer to significatly optimised the processing and deduplication using in memory indexing.",
-				"Worked in a team to build an online quote and sales lead system.",
-				// "IT support for Microsoft 365, Outlook, Windows etc.",
-				// "Assisted in management of Google Ads."
-			]
+				"Rewrote a financial statement importer to significatly optimise processing and deduplication using in memory indexing in JavaScript.",
+				"Worked in a small team to build an online quote and sales lead system using .Net and SendGrid.",
+				"Managed servers and hosting of various web apps including DNS.",
+				"Administrated various in house and third party emailing systems including Mailenable and Microsoft 365.",
+				"Built a tool for backing up office machines to OneDrive using Golang.",
+			],
 		],
-		[
-			"Pro-Quest Resourcing",
-			"Software Engineer",
-			"Dec 2018 - Jun 2020",
-			[
-				`Worked in a team to design, build and deploy a system comprising APIs, microservices and web apps to acquire vacancy data from various sources including scraping.
-				The vacancies were then normalized, filtered, candidate matched and matches emailed to prospective employers - up to 20,000 per day processed.
-				This included a data entry system for staff to populate incomplete vacancy data.`,
-				"Built a job listing web app to attract candidates to match with the vacancies of the system above. This was an SPA with background loading for a fast UX.",
-				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firebase Firestore.",
-			]
-		]
 	];
 	for (let c of companies) {
-		const [name, title, date, items] = c;
-		
+		const [name, description, title, date, items] = c;
+
 		const row = div(container);
 		Object.assign(row.style, {
 			display: "flex",
@@ -293,9 +303,10 @@ Object.assign(document.body.style, {
 			gap: "5px",
 		});
 		heading2(row, name);
-		text(row, "- " + title);
+		text(row, description);
 		grower(row);
 		text(row, date);
+		text(container, title)
 		const l = list(container);
 		for (let item of items) {
 			listItem(l, item);
@@ -311,16 +322,6 @@ Object.assign(document.body.style, {
 			"Jun, Sept 2020",
 			["Go", "WebSockets", "UDP"],
 			`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
-		],
-		[
-			"Crop Collage",
-			"github.com/jkeveren/crop-collage",
-			"Nov 2021",
-			["C++", "Magick++"],
-			`Linux tool that recursively finds images with an xattr that specifies an ImageMagic geometry.
-			Crops to that geometry and builds a collage from those cropped images.
-			Allows the archival of original images and use of cropped image in collage without the necessity to store a cropped version.
-			Optimized to reduce memory usage.`,
 		],
 		[
 			"Personal Website",
@@ -352,7 +353,7 @@ Object.assign(document.body.style, {
 			"continuous",
 			["JavaScript", "HTML", "CSS"],
 			`This CV is a HTML page that is built using JavaScript which I print to PDF.
-			When printing, some styles are changed which allows the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
+			When printing, some styles change allowing the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
 		],
 		[
 			"Doogle",
@@ -370,6 +371,16 @@ Object.assign(document.body.style, {
 			`NPM package that allows files to be accessd via an object that replicates the directory structure of the project.
 			Imports modules and reads file using getters for memory efficiency.
 			Removes the need for fragile relative paths.`
+		],
+		[
+			"Crop Collage",
+			"github.com/jkeveren/crop-collage",
+			"Nov 2021",
+			["C++", "Magick++"],
+			`Linux tool that recursively finds images with an xattr that specifies an ImageMagic geometry.
+			Crops to that geometry and builds a collage from those cropped images.
+			Allows the archival of original images and use of cropped image in collage without the necessity to store a cropped version.
+			Optimized to reduce memory usage.`,
 		],
 		[
 			"File Drop",
@@ -410,7 +421,7 @@ Object.assign(document.body.style, {
 			`When designing a steel workbench I used this script to calculate quantities of materials and components to purchase from multiple suppliers.`,
 		],
 	];
-	const printCount = 8;
+	const printCount = 5;
 	const noPrint = div(null);
 	noPrint.classList.add("noprint");
 	for (let i = 0; i < personalProjects.length; i++) {
