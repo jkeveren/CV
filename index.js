@@ -259,6 +259,19 @@ Object.assign(document.body.style, {
 	heading(container, "Employment");
 	const companies = [
 		[
+			"IFL Management",
+			"Umbrella company provider",
+			"Software Engineer",
+			"Mar 2017 - Present",
+			[
+				"Rewrote a QuickBooks data importer to significantly optimise processing and deduplication of financial data using in memory indexing in JavaScript.",
+				"Worked in a small team to build an online quote and sales lead system using .Net and SendGrid.",
+				"Managed servers and hosting of various web apps including DNS.",
+				"Administrated various in house and third party emailing systems including Mailenable and Microsoft 365.",
+				"Built a tool for backing up office machines to OneDrive using Golang.",
+			],
+		],
+		[
 			"Pro-Quest Resourcing",
 			"Recruitment company",
 			"Software Engineer",
@@ -276,19 +289,6 @@ Object.assign(document.body.style, {
 				`Built a job listing web app, using vanilla JavaScript, to attract candidates to match with the vacancies of the system above.
 				This was an SPA with background loading for a fast UX.`,
 				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firestore.",
-			],
-		],
-		[
-			"IFL Management",
-			"Umbrella company provider",
-			"Software Engineer",
-			"Mar 2017 - Present",
-			[
-				"Rewrote a QuickBooks data importer to significantly optimise processing and deduplication of financial data using in memory indexing in JavaScript.",
-				"Worked in a small team to build an online quote and sales lead system using .Net and SendGrid.",
-				"Managed servers and hosting of various web apps including DNS.",
-				"Administrated various in house and third party emailing systems including Mailenable and Microsoft 365.",
-				"Built a tool for backing up office machines to OneDrive using Golang.",
 			],
 		],
 	];
