@@ -72,7 +72,7 @@ document.head.appendChild(base);
 // html
 Object.assign(document.documentElement.style, {
 	fontFamily: "arial, sans-serif",
-	fontSize: "12px",
+	fontSize: "13px",
 });
 
 // body
@@ -127,7 +127,7 @@ Object.assign(document.body.style, {
 				anchor(linksContainer, ...l).style.whiteSpace = "nowrap"
 			}
 
-			// view online text
+			// view online link
 			const viewOnline = anchor(linksContainer, "View online at https://cv.keve.ren", "https://cv.keve.ren");
 			viewOnline.classList.add("print"); // only show when printing
 
@@ -155,16 +155,34 @@ Object.assign(document.body.style, {
 	// summary
 	heading(container, "Summary");
 	text(container,
-		`Software Engineer with experience in all aspects of building software including architecture, implementation, and deployment.
-		Most of my experience has been building REST APIs, microservices and frontends in JS, .Net and Go using both SQL and No-SQL DBs.
-		I also have experience with a wide range of other technologies as listed in the section below.
-		I think that it's important to follow best practices in order to promote and retain readability, maintainability and reliability.`
+		`A personable, passionate and creative person with knowledge of many engineering disciplines and manufacturing techniques.
+		I've gained most of my commercial experience during my Software Engineering career but Mechanical, Electrical, Electronic Engineering and Physics have been a huge passion of mine for my entire life as is reflected by my personal projects below.
+		During my experience as a Software Engineer I gained many trasnferrable skills around teamwork, project planning and project management.
+		From this experience I have become very familliar with the design, implementation, and iteration process.`
 	);
 
 	// skills and technology
 	// items are stored in an array to for easier reordering
 	heading(container, "Skills and Technology");
 	const skillSets = [
+		["CAD/CAM", [
+			"SolidWorks",
+			"Fusion 360",
+			"OpenScad",
+			"Cura",
+			"Chitubox",
+			"PrusaSlicer",
+			"Keyshot",
+			"Blender",
+		]],
+		["Mechanical, Electrical, and Electronic Engineering", [
+			"Welding (TIG, MIG)",
+			"3D Printing (FDM, MSLA)",
+			"Solar",
+			"HVAC",
+			"Classical Mechanics",
+			"General metalworking",
+		]],
 		["Software Engineering", [
 			"Golang",
 			"JavaScript",
@@ -178,7 +196,7 @@ Object.assign(document.body.style, {
 			"C++",
 			"Git",
 			"Google Cloud",
-			"firebase",
+			"Firebase",
 			"AWS",
 			"Plesk",
 			"MongoDB",
@@ -201,11 +219,6 @@ Object.assign(document.body.style, {
 			"Debian",
 			"CentOS",
 			"Systemd",
-			"Fish",
-			"Bash",
-			"SSH",
-			"ACLs",
-			"xattrs",
 			"Haproxy",
 			"Nginx",
 			"Plesk",
@@ -215,7 +228,6 @@ Object.assign(document.body.style, {
 			"Cage",
 			"FFmpeg",
 			"ImageMagick",
-			"LTO",
 			"Raspberry pi",
 		]],
 		["Networking", [
@@ -229,25 +241,14 @@ Object.assign(document.body.style, {
 			"PoE",
 			"Fibre Channel",
 		]],
-		["IT Support and Other IT", [
-			"Microsoft 365",
-			"MailEnable",
-			"Desktop/Server Hardware",
+		["Other", [
 			"Dell iDrac",
+			"LTO",
+			"Desktop/Server Hardware",
+			"MailEnable",
+			"Microsoft 365",
 			"Google Ads",
-			"Plesk"
-		]],
-		["Non-IT", [
-			"SolidWorks",
-			"Fusion360",
-			"OpenScad",
-			"Blender",
-			"Cura",
-			"Chitubox",
-			"Kdenlive",
-			"Adobe Premier Pro",
-			"Gimp",
-			"Paint.net",
+			"Plesk",
 		]]
 	];
 	for (let set of skillSets) {
@@ -255,19 +256,45 @@ Object.assign(document.body.style, {
 		text(container, set[1].join(", "));
 	}
 
-	// Employment
-	heading(container, "Employment");
+	// Experience
+	heading(container, "Experience");
 	const companies = [
+		// TODO: add links
+		[
+			"Komi",
+			"Celebrity fan inteligence platform",
+			"Software Engineer & Scrum Master",
+			"Mar 2022 - Jun 2022",
+			[
+				"Joined with four other engineers to form the new UK based engineering team.",
+				`Became Scrum Master, after just one month, alongside being a Software Engineer.
+					Resposibilities included:
+						ensuring the teams capacity is best utilised towards the sprint goal;
+						running each sprint and all scrum meetings;
+						and cultivating good teamwork and communication.
+				This role was new to me and involved a lot of intuition and learning but I received many compliments on my work.`,
+				"Worked extensively on the complex, business critical, and client facing \"pre-saves\" feature.",
+			]
+		],
+		[
+			"Pharmagraph",
+			"Manufacturer of environmental monitoring systems",
+			"CAD Consultant",
+			"Jan 2020",
+			[
+				"Created models and technical drawings in Fusion 360 for manufacture.",
+				"This was a small peice of work but was well recieved.",
+			]
+		],
 		[
 			"IFL Management",
 			"Umbrella company provider",
 			"Software Engineer",
-			"Mar 2017 - Present",
+			"Mar 2017 - Feb 2022",
 			[
 				"Rewrote a QuickBooks data importer to significantly optimise processing and deduplication of financial data using in memory indexing in JavaScript.",
 				"Worked in a small team to build an online quote and sales lead system using .Net and SendGrid.",
-				"Managed servers and hosting of various web apps including DNS.",
-				"Administrated various in house and third party emailing systems including Mailenable and Microsoft 365.",
+				"Managed servers, hosting of various web apps, DNS, and email.",
 				"Built a tool for backing up office machines to OneDrive using Golang.",
 			],
 		],
@@ -281,7 +308,6 @@ Object.assign(document.body.style, {
 				We built a complex data pipeline to regularly import vacancies from various sources.
 				Built with Node.js, .Net, SendGrid and microservices hosted on Google Cloud.
 				This provided Pro-Quest with all of it's vacancy leads.
-				Sources included third party vacany providers and scraping.
 				Vacancies were normalized, filtered and deduplicated (around 20,000 - 30,000 per day).
 				Relevant email addresses were found using a number of methods including bing searching, scraping, third party email providers and a data entry web app.
 				Emails were then sent out automatically to prospective employers.
@@ -289,6 +315,7 @@ Object.assign(document.body.style, {
 				`Built a job listing web app, using vanilla JavaScript, to attract candidates to match with the vacancies of the system above.
 				This was an SPA with background loading for a fast UX.`,
 				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firestore.",
+				"This company is a partner with IFLManagement"
 			],
 		],
 	];
@@ -315,96 +342,91 @@ Object.assign(document.body.style, {
 
 	// personal projects
 	heading(container, "Personal Projects");
+	text(container, "I love talking about these projects and the challenges involved so ask me in the interview if you feel it's relevant.");
 	const personalProjects = [
+		// TODO: get projects from links on personal website.
+		// TODO: convert to objects for conditionl links etc.
 		[
-			"Forza Map",
-			"github.com/jkeveren/forza-map",
-			"Jun, Sept 2020",
-			["Go", "WebSockets", "UDP"],
-			`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
+			"Solar Powered Mobility Scooter",
+			"james.keve.ren/gallery/IMG_20220701_141113.jpg",
+			"Jun 2022",
+			["Electrical", "Solar"],
+			`Reimplemented the electrical system of a mobility scooter to include a solar charge system.
+			Modifications also included increasing top spead by a factor of 2.5.
+			The project had unique challenges yet was completed solely using off the shelf components for swift execution.`,
+			// Challenges:
+			// Small panel space requires 12V for efficient use of space
+			// To increase speed without replacing drivetrain requires a voltage higher that 24V
+			// 99% of solar charge controllers are not able to boost voltage
+			// Solution was to connect supercapacitor bank to battery connection and boost converter to load output
+			// Boost converters are not battery chargers so upgrade to LiFePO4 batteries with built in bms
+			// Lithium for simple charge curve for boost converter, LiFePO4 for saftey.
 		],
 		[
-			"Personal Website",
-			"github.com/jkeveren/personal-website",
-			// "Mar 2015 - present",
-			"continuous",
-			["Go", "REST", "TDD"],
-			`Manipulates HTTP connections to "trickle" the home page.
-			Includes a gallery feature that is optimised for serving images over a slow connection by using compression and caching.`,
+			"Steel Workbench",
+			"youtu.be/0LhPWrXGbMg",
+			"Jul - Aug 2021",
+			["Metalworking"],
+			`210kg workbench made entirely from steel for heat resistance, durability, and to provide a surface to weld on.
+			This was designed and built to be constructed with my limited tools and without the use of welding.
+			As a result this was assembled using rivnuts, bolts and folding the ends of steel box section.`,
+			// Challenges:
+			// A lot of manual labour. Heating steel in small garage in Aug.
+			// Leg triangles required some compound pythagoras that got a bit complex but not too bad.
 		],
 		[
-			"MassDraw",
-			"github.com/jkeveren/massdraw",
-			"Aug - Oct 2017",
-			["JavaScript", "Node.js", "Socket.io"],
-			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
-		],
-		[
-			"Find by Extended Attribute",
-			"github.com/jkeveren/find-by-extended-attribute",
-			"Jan 2022",
-			["Go", "Linux", "xattrs", "TDD"],
-			`Simple Linux tool to find files based on extended attribute criteria.
-			Similar to \"getfattr -R\" but with much more sensible output.`,
-		],
-		[
-			"CV",
-			"github.com/jkeveren/cv",
-			"continuous",
-			["JavaScript", "HTML", "CSS"],
-			`This CV is a HTML page that is built using JavaScript which I print to PDF.
-			When printing, some styles change allowing the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
-		],
-		[
-			"Doogle",
-			"github.com/jkeveren/doogle",
-			"Jun 2020 and Jan 2021",
-			["Go", "Regexp", "Node.js", "Firebase"],
-			`Proxy to Google.com which replaces every instance of the word "Google" with the word "Doogle" including logos.
-			Any search is replaced by an image search for "beagle" with all instances of "beagle" replaces by "doogle".`,
-		],
-		[
-			"Require Object",
-			"npmjs.com/package/require-object",
-			"Apr 2018",
-			["Node.js", "NPM", "JavaScript"],
-			`NPM package that allows files to be accessed via an object that replicates the directory structure of the project.
-			Imports modules and reads file using getters for memory efficiency.
-			Removes the need for fragile relative paths.`
-		],
-		[
-			"Crop Collage",
-			"github.com/jkeveren/crop-collage",
-			"Nov 2021",
-			["C++", "Magick++"],
-			`Linux tool that recursively finds images with an xattr that specifies an ImageMagic geometry.
-			Crops to that geometry and builds a collage from those cropped images.
-			Allows the archival of original images and use of cropped image in collage without the necessity to store a cropped version.
-			Optimized to reduce memory usage.`,
-		],
-		[
-			"File Drop",
-			"github.com/jkeveren/file-drop",
+			"650A Power Supply",
+			"youtu.be/G3t07j_KhL4",
 			"Dec 2021",
-			["Go", "JavaScript", "HTML", "CSS"],
-			`Simple website for uploading files.
-			Useful when someone wants to send me a large file without an FTP client.`,
+			["Electrical", "TIG Welding", "Metalworking"],
+			`Power supply capable of providing 8kW of power for short bursts or 3kW continuous at 12-96VDC.
+			Created by aggreagating the output of eight, 1kW server power supplies is series or parallel to achieve a range of voltages and current ratings.
+			All powered from a custom, TIG welded, PDU and modifed to have floating outputs.`,
+			// Challenges:
+			// Measuring 1000A on a budget (hard to find 1000A shunt and ammeter with same mV spec. 2 500A shunts in parallel instead)
+			// Replacing PSU screws with nylon screws. Very fiddly.
 		],
 		[
-			"Crossout Market Scoring Tool",
-			"github.com/jkeveren/crossout-market-scoring-tool",
-			"Aug 2020",
-			["JavaScript", "Node.js"],
-			`Tool that analyses the market in the game Crossout in order to find the best items to buy and sell for profit.
-			Takes into account supply and demand, market activity and ROI.`,
+			"Holonomic Wheel",
+			"https://grabcad.com/library/holonomic-wheel-1",
+			"Oct 2014",
+			["SolidWorks"],
+			`Similar to a mechanum wheel, this is designed to allow a vehicle to move in any direction with as few as three wheels.
+			This was designed to be manufactured using only only basic metalworking equipment and 3D printing.`
+			// Challenges:
+			// Geometry has some complexity but not that bad.
+			// Figuring out the best number of rollers.
+				// To many: roller radius becomes to small
+				// To few: larger rollers require deeper wheel
+			// Drawbacks:
+			// Must be assembled on shaft
+			// Heavy
 		],
 		[
-			"Whitelisted File Server",
-			"github.com/jkeveren/whitelisted-file-server",
-			"Nov 2017 - Jun 2020",
-			["JavaScript", "Node.js"],
-			`Simple file server which only allows access if the clients IP is whitelisted.
-			Useful when sending a large files to friends with relative security and simple authentication.`,
+			"Road Bike Frameset",
+			"https://grabcad.com/library/road-bike-5",
+			"Oct 2015",
+			["SolidWorks"],
+			`Frame and forks for a road bike, optimised to resist structural torsion forces created by pedaling at high torque.
+			This project was limited by my ability to manufacture at the time.`,
+		],
+		[
+			"Other CAD Projects",
+			"grabcad.com/james.keveren-1/models",
+			"ongoing",
+			["SolidWorks", "Fusion 360"],
+			`A series of smaller projects that I created for fun.
+			My models are usually somewhat parametric and are made with feature stability in mind.
+			Many of these models involve assembies with medium complexity.`,
+		],
+		[
+			"3D Printing Projects",
+			"thingiverse.com/jkeveren/designs",
+			"ongoing",
+			["3D Printing", "CAD Software", "CAM Software"],
+			`I have many small 3D printing projects that involved, design, printing and iteration.
+			Many projects were objects designed to work with exising objects for example my Samsung Galaxy S4 Case.
+			This required carful metrology and iteration to perfect.`
 		],
 		[
 			"Home Controller",
@@ -414,14 +436,104 @@ Object.assign(document.body.style, {
 			`Used to control various lights and appliances around my home using Sonoff smart switches via their HTTP API.`,
 		],
 		[
+			// TODO: combine with workbnech project
 			"Workbench Parts Calculator",
 			"github.com/jkeveren/workbench-parts-helper",
 			"Sept 2019",
 			["JavaScript"],
 			`When designing a steel workbench I used this script to calculate quantities of materials and components to purchase from multiple suppliers.`,
 		],
+		// [
+		// 	"Forza Map",
+		// 	"github.com/jkeveren/forza-map",
+		// 	"Jun, Sept 2020",
+		// 	["Go", "WebSockets", "UDP"],
+		// 	`Map for the game Forza Horizon 4 that displays the realtime location of all configured players.`,
+		// ],
+		// [
+		// 	"Personal Website",
+		// 	"github.com/jkeveren/personal-website",
+		// 	"ongoing",
+		// 	["Go", "REST", "TDD"],
+		// 	`Manipulates HTTP connections to "trickle" the home page.
+		// 	Includes a gallery feature that is optimised for serving images over a slow connection by using compression and caching.`,
+		// ],
+		[
+			"MassDraw",
+			"github.com/jkeveren/massdraw",
+			"Aug - Oct 2017",
+			["JavaScript", "Node.js", "Socket.io"],
+			`Allows multiple people to draw on a shared whiteboard in realtime using Socket.io and JavaScript's canvas API.`,
+		],
+		// [
+		// 	"Find by Extended Attribute",
+		// 	"github.com/jkeveren/find-by-extended-attribute",
+		// 	"Jan 2022",
+		// 	["Go", "Linux", "xattrs", "TDD"],
+		// 	`Simple Linux tool to find files based on extended attribute criteria.
+		// 	Similar to \"getfattr -R\" but with much more sensible output.`,
+		// ],
+		// [
+		// 	"CV",
+		// 	"github.com/jkeveren/cv",
+		// 	"ongoing",
+		// 	["JavaScript", "HTML", "CSS"],
+		// 	`This CV is a HTML page that is built using JavaScript which I print to PDF.
+		// 	When printing, some styles change allowing the web version (at cv.keve.ren) to have visible links while keeping the PDF clean.`,
+		// ],
+		// [
+		// 	"Doogle",
+		// 	"github.com/jkeveren/doogle",
+		// 	"Jun 2020 and Jan 2021",
+		// 	["Go", "Regexp", "Node.js", "Firebase"],
+		// 	`Proxy to Google.com which replaces every instance of the word "Google" with the word "Doogle" including logos.
+		// 	Any search is replaced by an image search for "beagle" with all instances of "beagle" replaces by "doogle".`,
+		// ],
+		// [
+		// 	"Require Object",
+		// 	"npmjs.com/package/require-object",
+		// 	"Apr 2018",
+		// 	["Node.js", "NPM", "JavaScript"],
+		// 	`NPM package that allows files to be accessed via an object that replicates the directory structure of the project.
+		// 	Imports modules and reads file using getters for memory efficiency.
+		// 	Removes the need for fragile relative paths.`
+		// ],
+		// [
+		// 	"Crop Collage",
+		// 	"github.com/jkeveren/crop-collage",
+		// 	"Nov 2021",
+		// 	["C++", "Magick++"],
+		// 	`Linux tool that recursively finds images with an xattr that specifies an ImageMagic geometry.
+		// 	Crops to that geometry and builds a collage from those cropped images.
+		// 	Allows the archival of original images and use of cropped image in collage without the necessity to store a cropped version.
+		// 	Optimized to reduce memory usage.`,
+		// ],
+		// [
+		// 	"File Drop",
+		// 	"github.com/jkeveren/file-drop",
+		// 	"Dec 2021",
+		// 	["Go", "JavaScript", "HTML", "CSS"],
+		// 	`Simple website for uploading files.
+		// 	Useful when someone wants to send me a large file without an FTP client.`,
+		// ],
+		// [
+		// 	"Crossout Market Scoring Tool",
+		// 	"github.com/jkeveren/crossout-market-scoring-tool",
+		// 	"Aug 2020",
+		// 	["JavaScript", "Node.js"],
+		// 	`Tool that analyses the market in the game Crossout in order to find the best items to buy and sell for profit.
+		// 	Takes into account supply and demand, market activity and ROI.`,
+		// ],
+		// [
+		// 	"Whitelisted File Server",
+		// 	"github.com/jkeveren/whitelisted-file-server",
+		// 	"Nov 2017 - Jun 2020",
+		// 	["JavaScript", "Node.js"],
+		// 	`Simple file server which only allows access if the clients IP is whitelisted.
+		// 	Useful when sending a large files to friends with relative security and simple authentication.`,
+		// ],
 	];
-	const printCount = 5;
+	const printCount = Infinity;
 	const noPrint = div(null);
 	noPrint.classList.add("noprint");
 	for (let i = 0; i < personalProjects.length; i++) {
@@ -461,5 +573,15 @@ Object.assign(document.body.style, {
 		// text(row, date);
 		text(parent, description);
 	}
+	// append after adding non-nopriont projects so they appear first
 	container.appendChild(noPrint);
+
+	const spacer = div(container);
+	spacer.style.height = "10px";
+
+	text(container, "For more projects check out these links:");
+	const l = list(container);
+	anchor(listItem(l), "grabcad.com/james.keveren-1", "https://grabcad.com/james.keveren-1/models");
+	anchor(listItem(l), "thingiverse.com/jkeveren", "https://www.thingiverse.com/jkeveren/designs");
+	anchor(listItem(l), "github.com/jkeveren", "https://github.com/jkeveren");
 }
