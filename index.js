@@ -157,8 +157,8 @@ Object.assign(document.body.style, {
 	text(container,
 		`A personable, passionate and creative person with knowledge of many engineering disciplines and manufacturing techniques.
 		I've gained most of my commercial experience during my Software Engineering career but Mechanical, Electrical, Electronic Engineering and Physics have been a huge passion of mine for my entire life as is reflected by my personal projects below.
-		During my experience as a Software Engineer I gained many trasnferrable skills around teamwork, project planning and project management.
-		From this experience I have become very familliar with the design, implementation, and iteration process.`
+		During my experience as a Software Engineer I gained many transferable skills around teamwork, project planning and project management.
+		From this experience I have become very familiar with the design, implementation, and iteration process.`
 	);
 
 	// skills and technology
@@ -262,13 +262,13 @@ Object.assign(document.body.style, {
 		// TODO: add links
 		[
 			"Komi",
-			"Celebrity fan inteligence platform",
+			"Celebrity fan intelligence platform",
 			"Software Engineer & Scrum Master",
 			"Mar 2022 - Jun 2022",
 			[
 				"Joined with four other engineers to form the new UK based engineering team.",
 				`Became Scrum Master, after just one month, alongside being a Software Engineer.
-					Resposibilities included:
+					Responsibilities included:
 						ensuring the teams capacity is best utilised towards the sprint goal;
 						running each sprint and all scrum meetings;
 						and cultivating good teamwork and communication.
@@ -283,7 +283,7 @@ Object.assign(document.body.style, {
 			"Jan 2020",
 			[
 				"Created models and technical drawings in Fusion 360 for manufacture.",
-				"This was a small peice of work but was well recieved.",
+				"This was a small piece of work but was well received.",
 			]
 		],
 		[
@@ -308,14 +308,14 @@ Object.assign(document.body.style, {
 				We built a complex data pipeline to regularly import vacancies from various sources.
 				Built with Node.js, .Net, SendGrid and microservices hosted on Google Cloud.
 				This provided Pro-Quest with all of it's vacancy leads.
-				Vacancies were normalized, filtered and deduplicated (around 20,000 - 30,000 per day).
+				Vacancies were normalised, filtered and deduplicated (around 20,000 - 30,000 per day).
 				Relevant email addresses were found using a number of methods including bing searching, scraping, third party email providers and a data entry web app.
 				Emails were then sent out automatically to prospective employers.
 				We accrued a database of hundreds of thousands of vacancies, companies and contacts in order to manage email unsubscriptions and to access previously found email addresses.`,
 				`Built a job listing web app, using vanilla JavaScript, to attract candidates to match with the vacancies of the system above.
 				This was an SPA with background loading for a fast UX.`,
 				"Built a caching proxy for a slow third party recruitment API (JobAdder). Stored responses in Google's Firestore.",
-				"This company is a partner with IFLManagement"
+				"This company is partnered with IFL Management"
 			],
 		],
 	];
@@ -351,8 +351,8 @@ Object.assign(document.body.style, {
 			"james.keve.ren/gallery/IMG_20220701_141113.jpg",
 			"Jun 2022",
 			["Electrical", "Solar"],
-			`Reimplemented the electrical system of a mobility scooter to include a solar charge system.
-			Modifications also included increasing top spead by a factor of 2.5.
+			`Re-implemented the electrical system of a mobility scooter to include a solar charge system.
+			Modifications also included increasing top speed by a factor of 2.5.
 			The project had unique challenges yet was completed solely using off the shelf components for swift execution.`,
 			// Challenges:
 			// Small panel space requires 12V for efficient use of space
@@ -363,7 +363,7 @@ Object.assign(document.body.style, {
 			// Lithium for simple charge curve for boost converter, LiFePO4 for saftey.
 		],
 		[
-			"Steel Workbench",
+			"210kg Steel Workbench",
 			"youtu.be/0LhPWrXGbMg",
 			"Jul - Aug 2021",
 			["Metalworking"],
@@ -380,8 +380,8 @@ Object.assign(document.body.style, {
 			"Dec 2021",
 			["Electrical", "TIG Welding", "Metalworking"],
 			`Power supply capable of providing 8kW of power for short bursts or 3kW continuous at 12-96VDC.
-			Created by aggreagating the output of eight, 1kW server power supplies is series or parallel to achieve a range of voltages and current ratings.
-			All powered from a custom, TIG welded, PDU and modifed to have floating outputs.`,
+			Created by aggregating the output of eight, 1kW server power supplies is series or parallel to achieve a range of voltages and current ratings.
+			All powered from a custom, TIG welded, PDU and modified to have floating outputs.`,
 			// Challenges:
 			// Measuring 1000A on a budget (hard to find 1000A shunt and ammeter with same mV spec. 2 500A shunts in parallel instead)
 			// Replacing PSU screws with nylon screws. Very fiddly.
@@ -391,7 +391,7 @@ Object.assign(document.body.style, {
 			"https://grabcad.com/library/holonomic-wheel-1",
 			"Oct 2014",
 			["SolidWorks"],
-			`Similar to a mechanum wheel, this is designed to allow a vehicle to move in any direction with as few as three wheels.
+			`Similar to a mecanum wheel, this is designed to allow a vehicle to move in any direction with as few as three wheels.
 			This was designed to be manufactured using only only basic metalworking equipment and 3D printing.`
 			// Challenges:
 			// Geometry has some complexity but not that bad.
@@ -417,7 +417,7 @@ Object.assign(document.body.style, {
 			["SolidWorks", "Fusion 360"],
 			`A series of smaller projects that I created for fun.
 			My models are usually somewhat parametric and are made with feature stability in mind.
-			Many of these models involve assembies with medium complexity.`,
+			Many of these models involve assemblies with medium complexity.`,
 		],
 		[
 			"3D Printing Projects",
@@ -425,7 +425,7 @@ Object.assign(document.body.style, {
 			"ongoing",
 			["3D Printing", "CAD Software", "CAM Software"],
 			`I have many small 3D printing projects that involved, design, printing and iteration.
-			Many projects were objects designed to work with exising objects for example my Samsung Galaxy S4 Case.
+			Many projects were objects designed to work with existing objects for example my Samsung Galaxy S4 Case.
 			This required carful metrology and iteration to perfect.`
 		],
 		[
